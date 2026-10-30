@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://iv1u28ypbg6x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bjbe7"]
+size = Vector3(20, 0.1, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ypggg"]
+size = Vector3(20, 0.1, 10)
+
+[sub_resource type="Skin" id="Skin_p4tpu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i4p5m"]
+size = Vector3(17, 0.4, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wrhex"]
+size = Vector3(17, 0.4, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c1vpy"]
+albedo_color = Color(0.42595553, 0.42595553, 0.4259555, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eunl5"]
+size = Vector3(0.1, 0.4, 6.9)
+
+[sub_resource type="BoxMesh" id="BoxMesh_likf6"]
+size = Vector3(0.1, 0.4, 6.9)
+
+[node name="mapstatic" type="StaticBody3D" unique_id=652846255]
+
+[node name="floor" type="CollisionShape3D" parent="." unique_id=833483229]
+shape = SubResource("BoxShape3D_bjbe7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=1454534016]
+mesh = SubResource("BoxMesh_ypggg")
+skin = SubResource("Skin_p4tpu")
+metadata/_edit_group_ = true
+
+[node name="wall1" type="CollisionShape3D" parent="." unique_id=529295385]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 3.3782585)
+shape = SubResource("BoxShape3D_i4p5m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wall1" unique_id=1647550782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+mesh = SubResource("BoxMesh_wrhex")
+skin = SubResource("Skin_p4tpu")
+surface_material_override/0 = SubResource("StandardMaterial3D_c1vpy")
+
+[node name="wall2" type="CollisionShape3D" parent="." unique_id=128107681]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, -3.4366722)
+shape = SubResource("BoxShape3D_i4p5m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wall2" unique_id=1732810379]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+mesh = SubResource("BoxMesh_wrhex")
+skin = SubResource("Skin_p4tpu")
+surface_material_override/0 = SubResource("StandardMaterial3D_c1vpy")
+
+[node name="wall3" type="CollisionShape3D" parent="." unique_id=668986060]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.541354, 0.125, -0.036895752)
+shape = SubResource("BoxShape3D_eunl5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wall3" unique_id=903493879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0)
+mesh = SubResource("BoxMesh_likf6")
+skin = SubResource("Skin_p4tpu")
+surface_material_override/0 = SubResource("StandardMaterial3D_c1vpy")
+
+[node name="wall4" type="CollisionShape3D" parent="." unique_id=397573159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.522, 0.25, -0.037)
+shape = SubResource("BoxShape3D_eunl5")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wall4" unique_id=2043922848]
+mesh = SubResource("BoxMesh_likf6")
+skin = SubResource("Skin_p4tpu")
+surface_material_override/0 = SubResource("StandardMaterial3D_c1vpy")
