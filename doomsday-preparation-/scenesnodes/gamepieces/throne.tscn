@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cayx5lo8r2dwc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yy2c3"]
+custom_aabb = AABB(0, 0, 0, 5, 2, 1)
+size = Vector3(3.25, 0.076, 1.21)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4cjfu"]
+custom_aabb = AABB(0, 0, 0, 5, 2, 1)
+size = Vector3(1.22, 0.4, 1.21)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yes5r"]
+size = Vector3(1.01, 0.6612549, 1.21)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_na262"]
+size = Vector3(1.2, 0.661, 1.21)
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=972888345]
+
+[node name="MultiMeshInstance3D" type="MeshInstance3D" parent="." unique_id=710827252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03559518, 0)
+mesh = SubResource("BoxMesh_yy2c3")
+
+[node name="MultiMeshInstance3D" type="MeshInstance3D" parent="MultiMeshInstance3D" unique_id=878190747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16373825, 0)
+mesh = SubResource("BoxMesh_4cjfu")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="." unique_id=1684420885]
+depth = 1.21
+polygon = PackedVector2Array(0.6080018, 0.39758617, -0.6019818, 0.40061095, -0.614052, 0.06566277, -1.6219138, 0.074715436, -1.6219138, -0.00072327256, 1.6159186, -0.012793511, 1.6219537, 0.07773301, 0.6110739, 0.068680316)
+
+[node name="level1" type="Area3D" parent="." unique_id=479208806]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="level1" unique_id=1440089124]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1095778, 0.40795815, 0)
+shape = SubResource("BoxShape3D_yes5r")
+
+[node name="level3" type="Area3D" parent="." unique_id=1912834484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2161822, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="level3" unique_id=1845630500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1095778, 0.40795815, 0)
+shape = SubResource("BoxShape3D_yes5r")
+
+[node name="level2" type="Area3D" parent="." unique_id=1274825474]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="level2" unique_id=1465606853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7436585, 0)
+shape = SubResource("BoxShape3D_na262")
